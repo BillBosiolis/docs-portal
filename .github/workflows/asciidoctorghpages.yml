@@ -4,9 +4,9 @@ name: GitHub Pages Publish
 # events but only for the master branch
 on:
   push:
-    branches: [ master, main ]
+    branches: [main]
   pull_request:
-    branches: [ master, main ]
+    branches: [main]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,9 +25,9 @@ jobs:
       uses: manoelcampos/asciidoctor-ghpages-action@v2
       with:
         pdf_build: true
+        source_dir: docs/ # default is .
         # asciidoctor_params: --attribute=nofooter
         # adoc_file_ext: .ascii # default is .adoc
-        source_dir: docs/ # default is .
         # slides_build: true
         # pre_build:
         # post_build:
